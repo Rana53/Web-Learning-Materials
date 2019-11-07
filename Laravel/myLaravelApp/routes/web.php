@@ -11,17 +11,8 @@
 |
 */
 
-Route::get('/','/');
-Route::get('/about/us',
-Route::get('/product', function(){
-   
-});
-Route::get('/contact', function(){
-    
-});
-Route::get('/user', function() {
-    
-});
-Route::get('/admin', function() {
-
-});
+Route::get('/','HomeController@home');
+Route::get('home','HomeController@home')->name('home');
+Route::get('contact/us','HomeController@contact')->name('contact');
+Route::get('about/us','HomeController@about')->name('about');
+?>

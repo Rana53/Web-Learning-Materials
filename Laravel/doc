@@ -1,0 +1,2 @@
+to start laravel, command: php artisan serve
+create a controller: php artisan make:controller controllerName

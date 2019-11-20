@@ -16,4 +16,11 @@ Route::get('home','HomeController@home')->name('home');
 Route::get('contact/us','HomeController@contact')->name('contact');
 Route::get('about/us','HomeController@about')->name('about');
 
+// product operation
+Route::get('products','ProductsController@showAllProduct');
+Route::get('products/all','ProductsController@showAllProduct')->name('allproducts');
+Route::get('products/create','ProductsController@createProduct')->name('createproducts');
+Route::post('products/create','ProductsController@storeProduct')->name('store.product');
+Route::get('products/single/{pid}','ProductsController@showSingleProduct');
+Route::get('products/single/remove/{pid}','ProductsController@removeSingleProduct');
 ?>

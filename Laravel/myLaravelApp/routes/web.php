@@ -23,4 +23,6 @@ Route::get('products/create','ProductsController@createProduct')->name('createpr
 Route::post('products/create','ProductsController@storeProduct')->name('store.product');
 Route::get('products/single/{pid}','ProductsController@showSingleProduct');
 Route::get('products/single/remove/{pid}','ProductsController@removeSingleProduct');
+Route::get('products/single/edit/{pid}', 'ProductsController@editSingleProduct');
+Route::post('products/single/update/{pid}', 'ProductsController@updateSingleProduct');
 ?>

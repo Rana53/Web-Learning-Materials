@@ -23,7 +23,8 @@ class ProductsController extends Controller
         $data['details'] = $req->productDetails;
         
         $product = DB::table('products')->insert($data);
-        return view('pages.products.product-create-success');
+        $operation = "Created";
+        return view('pages.products.product-create-success',compact('operation'));
     }
 
     public function showSingleProduct($pid){
@@ -31,8 +32,21 @@ class ProductsController extends Controller
         return view('pages.products.product-single-details',compact('product'));
     }
     public function removeSingleProduct($pid) {
-        echo "yes";
         $data = DB::table('products')->where('pId',$pid)->delete();
         return redirect('products/all');
+    }
+
+    public function editSingleProduct($pid) {
+        $p = DB::table('products')->where('pId',$pid)->first();
+        return view('pages.products.product-edit',compact('p'));
+    }
+    public function updateSingleProduct(Request $req, $pid) {
+        $data['pId'] = $req->producId;
+        $data['pName'] = $req->producName;
+        $data['price'] = $req->producPrice;
+        $data['details'] = $req->productDetails;
+        DB::table('products')->where('pId',$pid)->update($data);
+        $operation = "Updated";
+        return view('pages.products.product-create-success',compact('operation'));
     }
 }

@@ -25,7 +25,7 @@
             <td><a href="{{ URL::to('products/single/'.$product->pId)}}" class="btn btn-sm btn-info">Details</a></td>
             <td>
               <a href="{{ URL::to('products/single/edit/'.$product->pId)}}" class="btn btn-sm btn-info">Edit</a>
-              <a href="{{ URL::to('products/single/remove/'.$product->pId)}}" class="btn btn-sm btn-danger" >Delete</a>
+              <a onclick="return confirm('Sure?')" href="{{ URL::to('products/single/remove/'.$product->pId)}}" class="btn btn-sm btn-danger" >Delete</a>
             </td>
         </tr>
       @endforeach  

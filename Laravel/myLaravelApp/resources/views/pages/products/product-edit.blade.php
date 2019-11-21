@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label>Product Details</label>
-                <textarea class="form-control" rows="4" value="{{$p->details}}" name="productDetails"></textarea>
+                <textarea class="form-control" rows="4" name="productDetails">{{$p->details}}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">update</button>
         </form>

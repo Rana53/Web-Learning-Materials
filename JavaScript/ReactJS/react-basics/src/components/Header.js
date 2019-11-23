@@ -2,8 +2,7 @@ import React from 'react';
 
 export const Header = (props) => {
     return (
-        <div>
-        <nav className="navbar navbar-default">
+      <nav className="navbar navbar-default">
         <div className="container">
           <div className="navbar-header">
             <ul className="nav navbar-nav">
@@ -12,6 +11,5 @@ export const Header = (props) => {
           </div>
         </div>
       </nav>
-      </div>
     );
 };

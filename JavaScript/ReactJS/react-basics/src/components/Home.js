@@ -1,5 +1,4 @@
 import React from 'react';
-import { tsConstructorType } from '@babel/types';
 
 export const Home = (props) => {
     this.state = {

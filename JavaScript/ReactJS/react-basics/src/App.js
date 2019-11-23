@@ -1,14 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div>
-        <p>
-          Hello!
-        </p>
-
+    <div className="container">
+      <div className="row">
+        <div className="col-xs-10 col-xs-offset-1">
+          <Header/>
+        </div>
+      </div>
     </div>
   );
 }

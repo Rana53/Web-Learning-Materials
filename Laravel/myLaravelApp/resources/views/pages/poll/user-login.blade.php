@@ -5,8 +5,9 @@
   <div class="container"> 
     <h1 class="display-4">Polling System</h1>
     <h2>User Login</h2>
+    <br>
     <form>
-      <label>Enter Valid roll</label>
+      <label>Enter Valid roll </label>
       <input type="text" placeholder="ender a valid roll" require name="id">
       <button type="submit" class="btn btn-success">Submit</button>
     </form>

@@ -36,7 +36,7 @@ class ProductsController extends Controller
         return redirect('products/all');
     }
 
-    public function editSingleProduct($pid) {
+    public function editSingleProduct($pid) {   
         $p = DB::table('products')->where('pId',$pid)->first();
         return view('pages.products.product-edit',compact('p'));
     }

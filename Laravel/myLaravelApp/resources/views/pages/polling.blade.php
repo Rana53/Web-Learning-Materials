@@ -10,7 +10,7 @@
       @csrf
       <input type="submit" class="btn btn-danger btn-lg" name = "option" value="User-login" >
     </form> 
-
+   <br>
     <form action="{{url('polling/login/')}}" method="POST">
       @csrf
       <input type="submit" class="btn btn-success btn-lg" name = "option" value="Admin-login">

@@ -29,4 +29,5 @@ Route::post('products/single/update/{pid}', 'ProductsController@updateSingleProd
 // event polling
 Route::get('polling', 'PollingSystem@optionPage')->name('polling');
 Route::post('polling/login/', 'PollingSystem@login');
+Route::post('polling/login/admin', 'PollingSystem@adminLogin');
 ?>

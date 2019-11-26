@@ -25,4 +25,8 @@ Route::get('products/single/{pid}','ProductsController@showSingleProduct');
 Route::get('products/single/remove/{pid}','ProductsController@removeSingleProduct');
 Route::get('products/single/edit/{pid}', 'ProductsController@editSingleProduct');
 Route::post('products/single/update/{pid}', 'ProductsController@updateSingleProduct');
+
+// event polling
+Route::get('polling', 'PollingSystem@optionPage')->name('polling');
+Route::post('polling/login/', 'PollingSystem@login');
 ?>

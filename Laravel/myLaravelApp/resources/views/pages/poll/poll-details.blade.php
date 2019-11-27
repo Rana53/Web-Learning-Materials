@@ -5,8 +5,8 @@
   <div class="container"> 
     <h1 class="display-4">Polling System</h1>
   </div>
-  <div class="alert alert-success">
-    <strong>Success!</strong>admin email or password  match
-  </div>
 </div>
+<div class="alert alert-success">
+    <strong>Successfully!</strong>admin admin login
+  </div>
 @endsection

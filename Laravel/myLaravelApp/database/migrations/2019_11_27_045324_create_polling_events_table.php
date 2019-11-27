@@ -15,6 +15,11 @@ class CreatePollingEventsTable extends Migration
     {
         Schema::create('polling_events', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('place');
+            $table->date('voteCastStartTime');
+            $table->date('voteCastEndTime');
+            $table->integer('count');
+            $table->integer('year');
             $table->timestamps();
         });
     }

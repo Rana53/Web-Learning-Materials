@@ -38,10 +38,11 @@ class PollingSystem extends Controller
             }
         }
         
-        // if($dbAdmin === null){
-        //     echo "no data";
-        // }else{
-        //     return response()->json($dbAdmin);
-        // }
+    }
+    public function userLogin(Request $req){
+        $events = DB::table('polling_events')->where('year','2019');
+        $sId = $req->userId;
+        return response()->json($events);
+        //return view('pages.poll.user-polling',compact('events','sId'));
     }
 }

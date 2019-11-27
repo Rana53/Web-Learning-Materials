@@ -6,9 +6,10 @@
     <h1 class="display-4">Polling System</h1>
     <h2>User Login</h2>
     <br>
-    <form>
+    <form action="{{url('polling/login/user')}}" method="POST">
+      @csrf
       <label>Enter Valid roll </label>
-      <input type="text" placeholder="ender a valid roll" require name="id">
+      <input type="text" placeholder="enter a valid roll" require name="userId">
       <button type="submit" class="btn btn-success">Submit</button>
     </form>
   </div>

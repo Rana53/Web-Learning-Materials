@@ -6,7 +6,7 @@
     <h1 class="display-4">Polling System</h1>
   </div>
   <div>
-    <form action="{{url('polling/login/')}}" method="POST">
+    <form action="{{url('polling/login')}}" method="POST">
       @csrf
       <input type="submit" class="btn btn-danger btn-lg" name = "option" value="User-login" >
     </form> 

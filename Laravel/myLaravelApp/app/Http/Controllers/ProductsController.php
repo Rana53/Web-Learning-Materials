@@ -40,7 +40,7 @@ class ProductsController extends Controller
         $p = DB::table('products')->where('pId',$pid)->first();
         return view('pages.products.product-edit',compact('p'));
     }
-    public function updateSingleProduct(Request $req, $pid) {
+    public function updateSingleProduct(Request $req) {
         $data['pId'] = $req->producId;
         $data['pName'] = $req->producName;
         $data['price'] = $req->producPrice;

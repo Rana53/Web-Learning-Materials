@@ -5,6 +5,19 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const User = require("../models/user");
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, './uploads')
+  },
+  filename: (req, file, cb) => {
+    cb(null, new Date().toISOString() + file.originalname)
+  }
+});
+
+const upload = multer({
+  storage: storage,
+});
 
 router.post('/signup', (req, res, next) => {
   User.find({email: req.body.email})
@@ -85,4 +98,14 @@ router.delete('/:userId', (req, res, err)=>{
   });
 });
 
+router.post("/multiple-image-pass", upload.fields('image',5), (req, res, err) => {
+  console.log('\n\n\n---------------------------------------------------------------------------');
+  console.log(req.files[0]);
+  console.log(req.files[1]);
+  console.log(req.files[2]);
+  console.log('---------------------------------------------------------------------------');
+  res.status(200).json({
+    message: "route works"
+  });
+});
 module.exports = router;

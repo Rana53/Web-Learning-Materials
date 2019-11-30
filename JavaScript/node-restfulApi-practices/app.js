@@ -7,16 +7,18 @@ const mongoose = require('mongoose');
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
+const fileHandle = require('./api/routes/file-handle');
 
 const dbURL  = 'mongodb+srv://node-shop:node-shop@cluster0-y2tlm.mongodb.net/test?retryWrites=true&w=majority';
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 app.use(morgan('dev'));
 
 mongoose.connect(dbURL,{ useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.set('useCreateIndex', true);
 mongoose.connection.on('connected', function(){
-    console.log("Mongoose default connection is open to ", dbURL);
+    console.log("Database connected");
  });
  mongoose.connection.on('error', function(err){
      console.log("Mongoose default connection has occured "+err+" error");
@@ -28,7 +30,7 @@ mongoose.connection.on('disconnected', function(){
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
-
+app.use('/file-handle',fileHandle)
 app.use((req, res, next) => {
     const error = new Error('request not found');
     error.status = 404;

@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+
+import Header from './components/header';
+
 const App = () => {
-  return <h1>Hello world</h1>
+  return (
+      <div>
+        <Header/>
+      </div>
+  )
 }
 
 ReactDom.render(<App/>, document.querySelector('#root'));

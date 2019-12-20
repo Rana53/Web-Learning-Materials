@@ -14,7 +14,7 @@ const dbURL  = 'mongodb+srv://node-shop:node-shop@cluster0-y2tlm.mongodb.net/tes
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); 
 app.use(morgan('dev'));
-
+app.use(express.static('uploads/places'));
 mongoose.connect(dbURL,{ useUnifiedTopology: true, useNewUrlParser: true });
 mongoose.set('useCreateIndex', true);
 mongoose.connection.on('connected', function(){

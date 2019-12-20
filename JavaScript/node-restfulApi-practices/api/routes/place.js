@@ -1,9 +1,14 @@
+// this rout for check multiple place can store in database
 const path = require('path'); // for getting file extension
 const express = require('express');
+const mongoose = require('mongoose');
 const multer = require('multer');
+const Place = require('../models/place');
+const router = express.Router();
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) =>{
-    cb(null, './uploads/');
+    cb(null,'./uploads/places');
   },
   filename: (req, file, cb) => {
     cb(null, new Date().toISOString() + file.originalname);
@@ -23,14 +28,25 @@ const upload = multer({
   },
   fileFilter: fileFilter
 });
-const router = express.Router();
-router.post('/single-image', upload.single('image'), (req, res, err) => {
-  res.status(200).json({
-    message: "image uploaded successfully"
-  });
-});
 
-router.post('/multiple-file')
+router.post('/', upload.array('photos',10),(req, res, next) => {
+  const place = new Place({
+    _id: mongoose.Types.ObjectId(),
+    name: req.body.name,
+    description: req.body.description,
+    address: {
+      country: req.body.country,
+      stateOrDivision: req.body.stateOrDivision
+    }
+  });
+  req.files.forEach(e => {
+    place.imagePath.push(e.path);
+  });
+  console.log(place);
+  res.status(200).json({
+    data: place
+  })
+});
 
 module.exports = router;
 

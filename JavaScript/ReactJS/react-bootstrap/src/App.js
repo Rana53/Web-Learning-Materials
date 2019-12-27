@@ -12,7 +12,7 @@ class App extends Component {
   
   render(){
     return(
-      <Fragment>
+      <Fragment> 
       <div className="container">
         <div className="row">
            <div className="col-md-6">

@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import Popper from 'popper.js';
+//import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 /*
 bellow code for react-basic
 import Header from './components/header';
@@ -11,6 +16,8 @@ import Posts from './components/route-lifecycle/posts';
 import PostItem from './components/route-lifecycle/post-item';
 import Profile from './components/route-lifecycle/profile';
 import LifeCycle from './components/route-lifecycle/life-cycle';
+import Bootstrap from './components/bootstrap/bootstrap';
+
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
  
@@ -22,7 +29,9 @@ const App = () => {
         <Link to="/posts">Posts</Link><br/>
         <Link to="/profile">Profile</Link><br/>
         <Link to="/life">LifeCycle</Link><br/>
+      
       </header>
+      <Route path="/bootstrap" component={Bootstrap}/>
       <Route path="/posts/:id/:username" component={PostItem}/>
       <Route path="/posts" exact component={Posts}/>
       <Route path="/profile" component={Profile}/>

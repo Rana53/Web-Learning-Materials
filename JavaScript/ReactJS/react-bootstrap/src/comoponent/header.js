@@ -45,9 +45,12 @@ function Header() {
               <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-success dropdown-toggle">Login <span class="caret"></span></button>
               <ul class="dropdown-menu dropdown-menu-right mt-2">
                 <li class="px-3 py-2">
-                  <button  class="btn btn-outline-info btn-sm float-right" >Singup</button> 
+                  <div style={{paddingBottom:"10px"}}>
+                    <button  class="btn btn-outline-info btn-sm float-right">Singup</button> 
+                  </div>
+                  
                   {/* <p>Welcome to our Site.Please enter your <span class="login-color">Login</span> details to login here. Or <span class="sin-color">Register</span> here.</p> */}
-                  <form class="form" role="form" style={{paddingTop:"10px"}}>
+                  <form class="form" role="form">
                       <div class="form-group">
                           <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required=""/>
                       </div>

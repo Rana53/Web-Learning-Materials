@@ -15,21 +15,32 @@ class App extends Component {
     ];
     return(
       <Fragment> 
-       <Header/>
-       
-       <div className="container">
-        <div id="mycarousel" className="carousel slide" data-ride="carousel">
-          <ol className="carousel-indicators">
-            <li data-target="#mycarousel" data-slide-to="0" ></li>
-            <li data-target="#mycarousel" data-slide-to="1" className="active"></li>
-          </ol>
-          <div className="carousel-inner">
-            <div className="item active">
-              <img src={images[0]}/>
+       < Header/>
+        <div className="container" style={{height:"400px", backgroundColor:"#e2e2e2"}}>
+        <div className="row">
+        <div className="col-md-2"></div>
+        <div className="col-md-8" style={{height:"100%",width:"100%"}}>
+        
+          <div id="mycarousel" className="carousel slide" data-ride="carousel">
+            <ol className="carousel-indicators">
+              <li data-target="#mycarousel" data-slide-to="0" ></li>
+              <li data-target="#mycarousel" data-slide-to="1" className="active"></li>
+            </ol>
+            <div className="carousel-inner">
+              <div className="item active">
+                <img style={{maxWidth:"100%", maxHeight:"100%"}} src={images[0]}/>
+              </div>
+             </div>
             </div>
-
           </div>
+
+          <div className="col-md-2"></div> 
         </div>
+        </div>
+
+        <div className="container">
+        
+          
       </div>
       </Fragment>   
     )  

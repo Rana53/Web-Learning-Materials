@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import { Fragment } from 'react';
-import {
-  Navbar, NavbarBrand, Nav, NavItem, NavLink
-} from 'reactstrap';
 
 import Header from './comoponent/header';
 
@@ -19,6 +16,7 @@ class App extends Component {
     return(
       <Fragment> 
        <Header/>
+       
        <div className="container">
         <div id="mycarousel" className="carousel slide" data-ride="carousel">
           <ol className="carousel-indicators">
